@@ -3,4 +3,6 @@ class Biblioteca < ApplicationRecord
   belongs_to :jogo
 
   delegate :titulo, to: :jogo, prefix: false
+
+  validades :jogo_id, uniquenes: {scope: usuario_id}
 end
